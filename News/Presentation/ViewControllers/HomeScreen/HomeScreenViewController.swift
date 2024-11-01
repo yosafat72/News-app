@@ -6,23 +6,41 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import SDWebImage
 
 class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var tabCollectionView: UICollectionView!
     @IBOutlet weak var headlineCollectionView: UICollectionView!
     
+    private let viewModel: HomeScreenViewModel
+    private let disposeBag = DisposeBag()
+    
     let menuName = ["Headlines", "Everything"]
     
     var isFirstTime = true
+    
+    private var arrNewArticle: [Article] = []
+    
+    init(viewModel: HomeScreenViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTabCollectionView()
-        
+        bindViewModel()
         
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         if(isFirstTime){
@@ -31,6 +49,21 @@ class HomeScreenViewController: UIViewController {
         }
     }
     
+    
+    private func bindViewModel(){
+        viewModel.output.data
+            .drive(onNext: { [weak self] entity in
+                self?.arrNewArticle = entity.articles
+                self?.headlineCollectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.errorMessage
+            .drive(onNext: { [weak self] error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+    }
     
     private func setupTabCollectionView(){
         tabCollectionView.delegate = self
@@ -58,7 +91,7 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         if(collectionView == tabCollectionView){
             return menuName.count
         }else{
-            return 20
+            return arrNewArticle.count
         }
         
     }
@@ -71,6 +104,18 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             return cell
         }else{
             let cell = headlineCollectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+            
+            let article = arrNewArticle[indexPath.row]
+            
+            cell.titleLabel.text = article.title
+            cell.subTitleLabel.text = article.description
+            
+            if let imageUrl = URL(string: article.urlToImage ?? ""){
+                cell.imageNews.sd_setImage(with: imageUrl)
+            }
+            
+            cell.dateLabel.text = article.publishedAt.toReadableString() + " " + article.publishedAt.toTimeString()
+            
             return cell
         }
         

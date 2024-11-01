@@ -10,6 +10,7 @@ target 'News' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
+  pod 'SDWebImage'
 
 
 end

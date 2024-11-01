@@ -10,6 +10,10 @@ import UIKit
 class NewsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var imageNews: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -6,4 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
+protocol NewsRepository {
+    func fetchHeadlineNews() -> Observable<NewsModel>
+}

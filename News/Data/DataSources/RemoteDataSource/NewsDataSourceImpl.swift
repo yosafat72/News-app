@@ -12,8 +12,8 @@ import SwiftyJSON
 
 class NewsDataSourceImpl : NewsDataSource {
     
-    private let baseURL = "https://api.openweathermap.org/data/2.5/weather"
-    private let apiKey = "YOUR_API_KEY"
+    private let baseURL = "https://newsapi.org/v2/top-headlines"
+    private let apiKey = "311be9f9ab43422f8a387238a8ec3092"
     
     func fetchTopHeadlines() -> Observable<NewsModel> {
         return Observable.create { observer in

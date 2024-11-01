@@ -18,7 +18,12 @@ class DoashboardTabBarController: UITabBarController {
     
     private func configTabs(){
         
-        let homeVC = HomeScreenViewController()
+        let newsDataSource = NewsDataSourceImpl()
+        let newsRepository = NewsRepositoryImpl(newsDataSource: newsDataSource)
+        let fetchHeadlineNewsUseCase = FetchHeadlineNewsUseCase(repository: newsRepository)
+        let homeScreenViewModel = HomeScreenViewModel(fetchHeadlineUsecase: fetchHeadlineNewsUseCase)
+        
+        let homeVC = HomeScreenViewController(viewModel: homeScreenViewModel)
         let profileVC = ProfileScreenViewController()
         
         homeVC.title = "Home"

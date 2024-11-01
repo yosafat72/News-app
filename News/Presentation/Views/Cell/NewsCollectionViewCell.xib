@@ -60,9 +60,8 @@
                                     <constraint firstAttribute="height" constant="20" id="DHS-Os-i17"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 November 2024 - 14:41 WIB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-uz-mhG">
-                                <rect key="frame" x="98" y="353" width="166" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 November 2024 - 14:41 WIB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-uz-mhG">
+                                <rect key="frame" x="98" y="352.33333333333331" width="166" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -72,6 +71,7 @@
                         <constraints>
                             <constraint firstItem="m18-hJ-ThB" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" constant="8" id="0aM-uc-bw2"/>
                             <constraint firstItem="6WR-Ae-cDM" firstAttribute="top" secondItem="m18-hJ-ThB" secondAttribute="bottom" constant="8" id="0dW-52-hB8"/>
+                            <constraint firstItem="CQe-uz-mhG" firstAttribute="leading" secondItem="y8y-yF-0fP" secondAttribute="trailing" constant="7.3333333333333286" id="3Dh-WT-0ka"/>
                             <constraint firstItem="y8y-yF-0fP" firstAttribute="leading" secondItem="bEC-1Y-b8X" secondAttribute="trailing" constant="8" id="4nl-Qu-C4L"/>
                             <constraint firstAttribute="trailing" secondItem="m18-hJ-ThB" secondAttribute="trailing" constant="8" id="9Xm-73-nQZ"/>
                             <constraint firstItem="FCV-g0-Hr6" firstAttribute="top" secondItem="mZL-YQ-CXa" secondAttribute="bottom" constant="20" id="9yc-Tk-Heg"/>
@@ -82,6 +82,7 @@
                             <constraint firstItem="bEC-1Y-b8X" firstAttribute="leading" secondItem="6WR-Ae-cDM" secondAttribute="trailing" constant="8" symbolic="YES" id="SGd-Mr-ikx"/>
                             <constraint firstItem="FCV-g0-Hr6" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" constant="8" id="UWY-Sj-U5F"/>
                             <constraint firstItem="mZL-YQ-CXa" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" id="Uz8-HI-Ue7"/>
+                            <constraint firstItem="CQe-uz-mhG" firstAttribute="centerY" secondItem="y8y-yF-0fP" secondAttribute="centerY" id="bhy-To-b8b"/>
                             <constraint firstAttribute="trailing" secondItem="mZL-YQ-CXa" secondAttribute="trailing" id="hJx-Bv-oNk"/>
                             <constraint firstItem="bEC-1Y-b8X" firstAttribute="centerY" secondItem="6WR-Ae-cDM" secondAttribute="centerY" id="hTU-pe-wOM"/>
                             <constraint firstItem="6WR-Ae-cDM" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" constant="8" id="oE0-Gl-JSm"/>
@@ -99,6 +100,10 @@
             <size key="customSize" width="393" height="497"/>
             <connections>
                 <outlet property="cardView" destination="5pb-nl-Qh3" id="0XA-FK-RAQ"/>
+                <outlet property="dateLabel" destination="CQe-uz-mhG" id="xlr-yD-ipa"/>
+                <outlet property="imageNews" destination="mZL-YQ-CXa" id="yU7-LN-pOz"/>
+                <outlet property="subTitleLabel" destination="m18-hJ-ThB" id="g16-O0-oi2"/>
+                <outlet property="titleLabel" destination="FCV-g0-Hr6" id="27e-lW-KQQ"/>
             </connections>
             <point key="canvasLocation" x="41.984732824427482" y="176.40845070422537"/>
         </collectionViewCell>
