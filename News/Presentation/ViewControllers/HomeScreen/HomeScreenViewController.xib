@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeScreenViewController" customModule="News" customModuleProvider="target">
             <connections>
+                <outlet property="headlineCollectionView" destination="Ab7-we-lR8" id="YMF-xn-Rc0"/>
                 <outlet property="tabCollectionView" destination="cGh-FI-zPs" id="0MJ-ao-ffQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,13 +30,27 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ab7-we-lR8">
+                    <rect key="frame" x="0.0" y="127" width="393" height="683"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Gl-Ad-Bxu">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Xds-yz-Jrb"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Ab7-we-lR8" firstAttribute="top" secondItem="cGh-FI-zPs" secondAttribute="bottom" constant="8" symbolic="YES" id="00d-Xq-HtY"/>
                 <constraint firstItem="Xds-yz-Jrb" firstAttribute="trailing" secondItem="cGh-FI-zPs" secondAttribute="trailing" id="IHK-La-qwo"/>
                 <constraint firstItem="cGh-FI-zPs" firstAttribute="top" secondItem="Xds-yz-Jrb" secondAttribute="top" id="bIT-Iz-Ul3"/>
+                <constraint firstItem="Ab7-we-lR8" firstAttribute="leading" secondItem="Xds-yz-Jrb" secondAttribute="leading" id="dJF-BO-Tcq"/>
                 <constraint firstItem="cGh-FI-zPs" firstAttribute="height" secondItem="Xds-yz-Jrb" secondAttribute="height" multiplier="0.168643" constant="-68" id="da8-TO-tiF"/>
+                <constraint firstItem="Xds-yz-Jrb" firstAttribute="trailing" secondItem="Ab7-we-lR8" secondAttribute="trailing" id="maE-8U-Myb"/>
+                <constraint firstItem="Xds-yz-Jrb" firstAttribute="bottom" secondItem="Ab7-we-lR8" secondAttribute="bottom" constant="8" id="oHq-CJ-dr1"/>
                 <constraint firstItem="cGh-FI-zPs" firstAttribute="leading" secondItem="Xds-yz-Jrb" secondAttribute="leading" id="qgb-kf-wX2"/>
             </constraints>
             <point key="canvasLocation" x="-16.030534351145036" y="19.718309859154932"/>

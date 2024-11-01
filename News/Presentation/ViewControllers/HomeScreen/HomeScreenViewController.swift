@@ -10,6 +10,7 @@ import UIKit
 class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var tabCollectionView: UICollectionView!
+    @IBOutlet weak var headlineCollectionView: UICollectionView!
     
     let menuName = ["Headlines", "Everything"]
     
@@ -34,8 +35,12 @@ class HomeScreenViewController: UIViewController {
     private func setupTabCollectionView(){
         tabCollectionView.delegate = self
         tabCollectionView.dataSource = self
+        headlineCollectionView.delegate = self
+        headlineCollectionView.dataSource = self
+        
         
         tabCollectionView.register(UINib(nibName: "HomeTabCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeTabCollectionViewCell")
+        headlineCollectionView.register(UINib(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsCollectionViewCell")
 
     }
     
@@ -50,13 +55,26 @@ class HomeScreenViewController: UIViewController {
 extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuName.count
+        if(collectionView == tabCollectionView){
+            return menuName.count
+        }else{
+            return 20
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = tabCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeTabCollectionViewCell", for: indexPath) as! HomeTabCollectionViewCell
-        cell.titleLabel.text = menuName[indexPath.row]
-        return cell
+        
+        if(collectionView == tabCollectionView){
+            let cell = tabCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeTabCollectionViewCell", for: indexPath) as! HomeTabCollectionViewCell
+            cell.titleLabel.text = menuName[indexPath.row]
+            return cell
+        }else{
+            let cell = headlineCollectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+            return cell
+        }
+        
+        
     }
     
 }
@@ -64,8 +82,12 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
 extension HomeScreenViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 10) / 2
-        return CGSize(width: width, height: 50)
+        if(collectionView == tabCollectionView){
+            let width = (collectionView.frame.width - 10) / 2
+            return CGSize(width: width, height: 50)
+        }else{
+            return CGSize(width: collectionView.frame.width, height: 415)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -78,20 +100,28 @@ extension HomeScreenViewController: UICollectionViewDelegateFlowLayout {
     
     // UICollectionViewDelegate Method
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? HomeTabCollectionViewCell {
-            
-            cell.titleLabel.textColor = .label
-            cell.lineView.backgroundColor = .tintColor
+        
+        if(collectionView == tabCollectionView){
+            if let cell = collectionView.cellForItem(at: indexPath) as? HomeTabCollectionViewCell {
+                
+                cell.titleLabel.textColor = .label
+                cell.lineView.backgroundColor = .tintColor
+            }
         }
+        
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        if let cell = collectionView.cellForItem(at: indexPath) as? HomeTabCollectionViewCell {
-            
-            cell.titleLabel.textColor = .lightGray
-            cell.lineView.backgroundColor = .clear
+        if(collectionView == tabCollectionView){
+            if let cell = collectionView.cellForItem(at: indexPath) as? HomeTabCollectionViewCell {
+                
+                cell.titleLabel.textColor = .lightGray
+                cell.lineView.backgroundColor = .clear
+            }
         }
+        
     }
 
 }

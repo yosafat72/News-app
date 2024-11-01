@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsCollectionViewCell" id="gTV-IL-0wX" customClass="NewsCollectionViewCell" customModule="News" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="497"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="497"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pb-nl-Qh3">
+                        <rect key="frame" x="8" y="67" width="377" height="388"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="mZL-YQ-CXa">
+                                <rect key="frame" x="0.0" y="0.0" width="377" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="hOM-Pg-t1p"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Letnan Jenderal TNI Jebolan Akmil 1990, Nomor 1 Jadi Lulusan Terbaik Peraih Adhi Makayasa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCV-g0-Hr6">
+                                <rect key="frame" x="8" y="245.00000000000003" width="361" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m18-hJ-ThB">
+                                <rect key="frame" x="8" y="291.33333333333331" width="361" height="50.333333333333314"/>
+                                <string key="text">Sejumlah nama Letnan Jenderal TNI diketahui berasal dari jebolan Akademi Militer (Akmil) 1990. Salah satunya Letjen TNI I Nyoman Cantiasa yang berstatus lulusan terbaik ( Adhi Makayasa ) dari angkatan tersebut.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WR-Ae-cDM">
+                                <rect key="frame" x="8" y="349.66666666666669" width="20" height="20"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="4SC-3d-UhR"/>
+                                    <constraint firstAttribute="height" constant="20" id="Zfh-wu-oWy"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hankam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEC-1Y-b8X">
+                                <rect key="frame" x="36" y="352.33333333333331" width="45.666666666666657" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8y-yF-0fP">
+                                <rect key="frame" x="89.666666666666671" y="349.66666666666669" width="1" height="20"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="0zR-tv-Kze"/>
+                                    <constraint firstAttribute="height" constant="20" id="DHS-Os-i17"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 November 2024 - 14:41 WIB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-uz-mhG">
+                                <rect key="frame" x="98" y="353" width="166" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m18-hJ-ThB" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" constant="8" id="0aM-uc-bw2"/>
+                            <constraint firstItem="6WR-Ae-cDM" firstAttribute="top" secondItem="m18-hJ-ThB" secondAttribute="bottom" constant="8" id="0dW-52-hB8"/>
+                            <constraint firstItem="y8y-yF-0fP" firstAttribute="leading" secondItem="bEC-1Y-b8X" secondAttribute="trailing" constant="8" id="4nl-Qu-C4L"/>
+                            <constraint firstAttribute="trailing" secondItem="m18-hJ-ThB" secondAttribute="trailing" constant="8" id="9Xm-73-nQZ"/>
+                            <constraint firstItem="FCV-g0-Hr6" firstAttribute="top" secondItem="mZL-YQ-CXa" secondAttribute="bottom" constant="20" id="9yc-Tk-Heg"/>
+                            <constraint firstItem="mZL-YQ-CXa" firstAttribute="top" secondItem="5pb-nl-Qh3" secondAttribute="top" id="BPp-Ed-bZz"/>
+                            <constraint firstAttribute="trailing" secondItem="FCV-g0-Hr6" secondAttribute="trailing" constant="8" id="Ckd-X1-owf"/>
+                            <constraint firstItem="y8y-yF-0fP" firstAttribute="centerY" secondItem="bEC-1Y-b8X" secondAttribute="centerY" id="DDk-Rf-J8Y"/>
+                            <constraint firstItem="m18-hJ-ThB" firstAttribute="top" secondItem="FCV-g0-Hr6" secondAttribute="bottom" constant="8" id="DaY-Qg-9kU"/>
+                            <constraint firstItem="bEC-1Y-b8X" firstAttribute="leading" secondItem="6WR-Ae-cDM" secondAttribute="trailing" constant="8" symbolic="YES" id="SGd-Mr-ikx"/>
+                            <constraint firstItem="FCV-g0-Hr6" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" constant="8" id="UWY-Sj-U5F"/>
+                            <constraint firstItem="mZL-YQ-CXa" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" id="Uz8-HI-Ue7"/>
+                            <constraint firstAttribute="trailing" secondItem="mZL-YQ-CXa" secondAttribute="trailing" id="hJx-Bv-oNk"/>
+                            <constraint firstItem="bEC-1Y-b8X" firstAttribute="centerY" secondItem="6WR-Ae-cDM" secondAttribute="centerY" id="hTU-pe-wOM"/>
+                            <constraint firstItem="6WR-Ae-cDM" firstAttribute="leading" secondItem="5pb-nl-Qh3" secondAttribute="leading" constant="8" id="oE0-Gl-JSm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="5pb-nl-Qh3" secondAttribute="bottom" constant="8" id="FqH-7g-fiA"/>
+                <constraint firstItem="5pb-nl-Qh3" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="8" id="onB-8O-sTo"/>
+                <constraint firstItem="5pb-nl-Qh3" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="8" id="qYL-hl-oN3"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="5pb-nl-Qh3" secondAttribute="trailing" constant="8" id="rE7-EX-Kry"/>
+            </constraints>
+            <size key="customSize" width="393" height="497"/>
+            <connections>
+                <outlet property="cardView" destination="5pb-nl-Qh3" id="0XA-FK-RAQ"/>
+            </connections>
+            <point key="canvasLocation" x="41.984732824427482" y="176.40845070422537"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="no_image" width="666.66668701171875" height="666.66668701171875"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
