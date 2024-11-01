@@ -15,8 +15,10 @@ class SplashScreenViewController: UIViewController {
         super.viewDidLoad()
         
         logoConfiguration()
-
-        // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+            self.navigateToMainScreen()
+        }
     }
     
     private func logoConfiguration(){
@@ -28,6 +30,17 @@ class SplashScreenViewController: UIViewController {
         ivLogo.layer.shadowOffset = CGSize(width: 0, height: 2)
         ivLogo.layer.shadowRadius = 5
         
+    }
+    
+    private func navigateToMainScreen() {
+        let dashboardViewController = DoashboardTabBarController()
+    
+       
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = dashboardViewController
+            window.makeKeyAndVisible()
+        }
     }
 
 
