@@ -11,18 +11,23 @@ class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var tabCollectionView: UICollectionView!
     
-    
     let menuName = ["Headlines", "Everything"]
+    
+    var isFirstTime = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTabCollectionView()
         
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        selectFirstItem()
+        if(isFirstTime){
+            selectFirstItem()
+            isFirstTime = false
+        }
     }
     
     
@@ -31,6 +36,7 @@ class HomeScreenViewController: UIViewController {
         tabCollectionView.dataSource = self
         
         tabCollectionView.register(UINib(nibName: "HomeTabCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeTabCollectionViewCell")
+
     }
     
     private func selectFirstItem(){
